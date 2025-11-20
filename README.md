@@ -42,11 +42,12 @@ Consider the following program:
 
 For this program, the control flow graph (CFG) is 
 
-[[Pasted image 20251120115205.png]]
+<img width="759" height="403" alt="Pasted image 20251120115205 1" src="https://github.com/user-attachments/assets/e0647bdb-abdb-475e-b7de-5f0fac381b36" />
 
 and it's corresponding grammatical decomposition will be 
 
-[[Pasted image 20251120115233.png]]
+<img width="743" height="421" alt="Pasted image 20251120115233" src="https://github.com/user-attachments/assets/58cb50ad-8ded-48e4-a5f2-89e03c500178" />
+
 where the symbols **⊗**, **⊕**, refer to parallel and series node, respectively, and circled asterisk refers to while-loop node.  
 
 For a complete technical overview, please refer to the original research paper.
