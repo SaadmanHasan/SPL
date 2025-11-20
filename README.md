@@ -1,12 +1,12 @@
-
+## Getting Started
 This repository contains an implementation for converting a program's Control-Flow Graph (CFG) into a grammatical decomposition, referred to as an Series-Parallel-Loop(SPL) decomposition, based on the concepts presented in the paper "Faster Chaitin-like Register Allocation via Grammatical Decompositions of Control-Flow Graphs".
 
-### What is SPL Decomposition?
+## What is SPL Decomposition?
 An SPL decomposition is a method of breaking down a control-flow graph based on a graph grammar that precisely mirrors the syntax of structured programming languages. The name "SPL" is derived from the three fundamental operations used in the grammar to construct graphs: **S**eries, **P**arallel, and **L**oop.
 
 Unlike previous graph sparsity parameters like treewidth or pathwidth, which describe a broader family of graphs, the SPL grammar is designed to _exactly_ capture the set of graphs that can be realized as the CFG of a structured program, including those that use `break` and `continue` statements. The result of this process is a parse tree for the CFG, which serves as its grammatical decomposition.
 
-### Why is SPL Decomposition Useful?
+## Why is SPL Decomposition Useful?
 The primary advantage of this decomposition is that it enables highly efficient and asymptotically faster algorithms for various compiler optimization and program analysis tasks. Traditional methods based on treewidth or pathwidth are often more complex because they must account for graph structures not found in actual CFGs.
 
 By using a decomposition that precisely fits the problem domain, we can design more streamlined dynamic programming algorithms. As demonstrated in the source paper, this approach leads to significant performance gains for classical problems like register allocation.
@@ -16,8 +16,8 @@ Key advantages include:
 - **Precision**: It provides a decomposition that, unlike treewidth or pathwidth, is tailored specifically for the structure of CFGs from structured programs.
 - **Efficiency**: It serves as a foundation for faster algorithms. For instance, the paper presents a register allocation algorithm with a runtime of O(|V|^5), a significant improvement over the previous treewidth-based approach's O(|V|^16) runtime
 - **Scalability**: The resulting algorithms are not just faster in theory but also in practice. The paper's experimental results show that this method can solve spill-free register allocation for up to 20 registers, making it applicable to modern architectures like x86, whereas previous methods could only scale to 8 registers.
-### How It Works
 
+## How It Works
 The decomposition process is founded on a context-free graph grammar.
 
 1. **Base Cases**: The grammar starts with three "atomic" graphs: `stmt` (for a neutral statement), `break`, and `continue`.
@@ -31,14 +31,7 @@ The decomposition process is founded on a context-free graph grammar.
 In this implementation, in addition to while loops, we also implement `do-while` loops as well. 
 
 Consider the following program: 
-
-`while x` $\leq$ `1 do`
-	`if x` $\leq$ `a then`
-		`break;`
-	`else if x` $\geq$ `b then`
-		`x` $\leftarrow$ `x/2;`
-		`continue;`
-	`x` $\leftarrow$ `x - 1;`
+<img width="436" height="336" alt="image" src="https://github.com/user-attachments/assets/573a94d5-b60b-4ae8-92ad-215ca6ceccb8" />
 
 For this program, the control flow graph (CFG) is 
 
@@ -52,10 +45,10 @@ where the symbols **⊗**, **⊕**, refer to parallel and series node, respectiv
 
 For a complete technical overview, please refer to the original research paper.
 
-### Running the Implementation
+## Running the Implementation
 
 This implementation is written in C++ and can be compiled using either the provided shell script or by running the `g++` command directly.
-#### Compilation
+### Compilation
 You have two options for compiling the source code:
 
 **1. Using the Shell Script (Recommended)**
@@ -74,7 +67,7 @@ If you prefer to compile the files manually, you can use the following `g++` com
 
 This command links all the source files and generates the `SPL` executable.
 
-#### Running the Program
+### Running the Program
 
 After successfully compiling the program, an executable file named `SPL` will be created in your directory. To run it, use the following command:
 
