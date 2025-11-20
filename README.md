@@ -72,3 +72,5 @@ This command links all the source files and generates the `SPL` executable.
 After successfully compiling the program, an executable file named `SPL` will be created in your directory. To run it, use the following command:
 
 `./SPL <path_to_your_graph_file>`
+
+A sample input and its corresponding output are provide in input.txt and output.txt, respectively. 
