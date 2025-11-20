@@ -31,6 +31,7 @@ The decomposition process is founded on a context-free graph grammar.
 In this implementation, in addition to while loops, we also implement `do-while` loops as well. 
 
 Consider the following program: 
+
 <img width="436" height="336" alt="image" src="https://github.com/user-attachments/assets/573a94d5-b60b-4ae8-92ad-215ca6ceccb8" />
 
 For this program, the control flow graph (CFG) is 
