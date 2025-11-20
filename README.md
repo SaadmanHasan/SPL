@@ -42,11 +42,11 @@ Consider the following program:
 
 For this program, the control flow graph (CFG) is 
 
-![[Pasted image 20251120115205.png]]
+[[Pasted image 20251120115205.png]]
 
 and it's corresponding grammatical decomposition will be 
 
-![[Pasted image 20251120115233.png]]
+[[Pasted image 20251120115233.png]]
 where the symbols **⊗**, **⊕**, refer to parallel and series node, respectively, and circled asterisk refers to while-loop node.  
 
 For a complete technical overview, please refer to the original research paper.
