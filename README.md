@@ -75,3 +75,5 @@ After successfully compiling the program, an executable file named `SPL` will be
 `./SPL <path_to_your_graph_file>`
 
 A sample input and its corresponding output are provide in input.txt and output.txt, respectively. 
+
+Original Paper: https://dl.acm.org/doi/10.1145/3669940.3707286
